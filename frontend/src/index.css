@@ -57,6 +57,9 @@ body{
 .flex-wrap{
     flex-wrap: wrap!important;
 }
+.mh-60vh{
+    min-height: 60vh!important;
+}
 ul li{
     list-style: none!important;
 }

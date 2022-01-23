@@ -2,8 +2,10 @@ import {PostCreateForm, PostContainer} from '../../exportStore';
 const Main = () => {
     return (
         <>
-            <PostCreateForm/>
-            <PostContainer/>
+            <div className='mh-60vh'>
+                <PostCreateForm/>
+                <PostContainer/>
+            </div>
         </>
     )
 }
