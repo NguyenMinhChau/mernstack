@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false \"cd backend && npm run dev\" \"cd frontend && npm start\""
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" ",
+    "start": "node backend/server.js"
   },
   "engines": {
     "node": ">=8.0.0"
