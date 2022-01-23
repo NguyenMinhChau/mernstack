@@ -5,7 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" "
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" ",
+    "start": "node backend/server.js",
+    "instal-frontend": "cd frontend && npm install",
+    "heroku-postbuild": "npm run instal-frontend && npm run build"
+  },
+  "engines": {
+    "node": ">=8.0.0"
   },
   "repository": {
     "type": "git",
@@ -17,7 +23,7 @@
     "url": "https://github.com/NguyenMinhChau/mernstack/issues"
   },
   "homepage": "https://github.com/NguyenMinhChau/mernstack#readme",
-  "dependencies": {
+  "devDependencies": {
     "concurrently": "^7.0.0"
   }
 }
