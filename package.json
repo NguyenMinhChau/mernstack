@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "cd frontend && npm --production=false && npm run build",
-    "dev": "concurrently \"node backend/server.js\" \"cd frontend && npm start\" ",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" ",
+    "heroku-postbuild": "npm run dev",
     "start": "node backend/server.js"
   },
   "repository": {
