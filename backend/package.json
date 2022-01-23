@@ -18,9 +18,7 @@
     "js": "^0.1.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.7",
-    "netlify-cli": "^8.13.0"
-  },
-  "devDependencies": {
+    "netlify-cli": "^8.13.0",
     "nodemon": "^2.0.15"
   }
 }
