@@ -1,0 +1,80 @@
+:root{
+    --color-body: #18191a;
+    --color-primary: #3982e4;
+    --color-white: #fff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Helvetica Neue",Helvetica,Arial;
+    background-color: var(--color-body);
+}
+.text-bold{
+    font-weight: bold !important;
+}
+.pd-rt-15{
+    padding: 0 15px!important;
+}
+.btn-custom{
+    min-width: 100px!important;
+    border-radius: 5px !important;
+    border: 1px solid var(--color-primary)!important;
+    border-bottom: 3px solid var(--color-primary)!important;
+    padding: 5px 12px!important;
+    background-color: transparent!important;
+    color: var(--color-white)!important;
+    cursor: pointer!important;
+    transition: all .2s linear!important;
+}
+.btn-custom:hover{
+    background-color: var(--color-primary)!important;
+    border-bottom: 3px solid var(--color-white)!important;
+}
+.text-underline{
+    text-decoration: underline!important;
+}
+.in-block{
+    display: inline-block!important;
+}
+.flex-align-center{
+    align-items: center!important;
+}
+.flex-justify-center{
+    justify-content: center!important;
+}
+.w-100{
+    width: 100%!important;
+}
+.error-message{
+    color: red!important;
+}
+.cr-pt{
+    cursor: pointer!important;
+}
+.flex-wrap{
+    flex-wrap: wrap!important;
+}
+ul li{
+    list-style: none!important;
+}
+/* PC */
+@media (min-width: 64em) {}
+
+/* Ipad Pro */
+@media (max-width: 64em) {}
+
+/* Tablet & Mobile */
+@media (max-width: 63.9375em){}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {}
+
+/* Mobile  */
+@media (max-width: 46.25em) {
+    .mt-3{
+        margin-top: 15px!important;;
+    }
+}

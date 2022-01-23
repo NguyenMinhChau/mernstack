@@ -1,0 +1,9 @@
+:root {
+    --color-white: #fff;
+}
+textarea{
+    background-color: transparent!important;
+    color: var(--color-white)!important;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px!important;
+}

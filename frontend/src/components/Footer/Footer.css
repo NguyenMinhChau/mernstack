@@ -1,0 +1,15 @@
+:root{
+    --color-white: #fff;
+    --color-active: #3982e4;
+}
+.list-icons > .icon-item > a > i {
+    font-size: 22px!important;
+}
+.list-icons > .icon-item > a {
+    color: var(--color-white) !important;
+    padding: 8px 15px!important;
+    transition: all .2s linear !important;
+}
+.list-icons > .icon-item > a:hover{
+    color: var(--color-active) !important;
+}

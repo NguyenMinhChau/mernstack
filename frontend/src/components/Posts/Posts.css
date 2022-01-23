@@ -1,0 +1,27 @@
+:root {
+    --color-body-list: #242526;
+    --color-white: #fff;
+    --color-white-opacity: rgba(255, 255, 255, 0.637);
+    --color-black: #000;
+}
+.post-list-container > .post-list-item {
+    background-color: var(--color-body-list)!important;
+    padding: 30px 20px!important;
+    border-radius: 5px!important;
+    color: var(--color-white)!important;
+    font-family: 'Times New Roman', Times, serif;
+}
+.post-list-item-top > .post-list-item-text{
+    font-size: 18px!important;
+    text-align: justify!important;
+}
+.post-list-item-bottom{
+    border-radius: 5px!important;
+    background-color: var(--color-white-opacity);
+    padding: 10px 12px;
+}
+.form-item-bottom-updates > .form-group > #content{
+    background-color: var(--color-black)!important;
+    color: var(--color-white)!important;
+    font-size: 17px!important;
+}

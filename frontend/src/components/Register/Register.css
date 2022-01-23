@@ -1,0 +1,14 @@
+:root{
+    --color-body-form: #242526;
+    --color-primary: #3982e4;
+}
+.form-register{
+    width: 30%!important;
+    padding: 20px 30px!important;
+    background-color:var(--color-body-form);
+    border-radius: 5px!important;
+    font-family: 'Times New Roman', Times, serif!important;
+}
+.form-register-text{
+    color: var(--color-primary);
+}

@@ -1,0 +1,6 @@
+:root {
+    --color-active: #3982e4;
+}
+.active-user{ 
+    color: var(--color-active)!important;
+}
