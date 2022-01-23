@@ -9,6 +9,9 @@
     "dev": "concurrently \"node backend/server.js\" \"cd frontend && npm start\" ",
     "start": "node backend/server.js"
   },
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NguyenMinhChau/mernstack.git"
