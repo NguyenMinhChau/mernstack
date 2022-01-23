@@ -1,0 +1,21 @@
+{
+  "name": "mongodb_expressjs_reactjs_nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./backend/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "npm run instal-client && npm run build",
+    "instal-client": "cd frontend && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NguyenMinhChau/mernstack.git"
+  },
+  "author": "NguyenMinhChau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NguyenMinhChau/mernstack/issues"
+  },
+  "homepage": "https://github.com/NguyenMinhChau/mernstack#readme"
+}
