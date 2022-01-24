@@ -4,6 +4,7 @@ const cors = require('cors')
 const db = require('./configs/db')
 const router = require('./routers')
 const errorHandler = require('./middlewares/errorHandling')
+const path = require('path');
 const app = express()
 const port = process.env.APP_PORT || 3000
 //cho phép frontend kết nối backend
@@ -28,9 +29,9 @@ app.all('*', function(req, res, next) {
 app.use(errorHandler)
 
 if(process.env.NODE_ENV === 'production'){
-    app.use(express.static(__dirname + '../frontend/build'));
+    app.use(express.static(path.resolve('../frontend/' + 'build')));
     app.get('*', (req,res) => {
-        res.sendFile(__dirname + '../frontend/build/index.html');
+        res.sendFile(path.resolve('../frontend/' + 'build/index.html'));
     })
 }
 
