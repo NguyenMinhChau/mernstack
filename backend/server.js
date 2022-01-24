@@ -6,7 +6,7 @@ const router = require('./routers')
 const errorHandler = require('./middlewares/errorHandling')
 const path = require('path');
 const app = express()
-const port = process.env.APP_PORT || 3000
+const port = process.env.APP_PORT || 5000
 //cho phép frontend kết nối backend
 app.use(cors());
 
@@ -27,13 +27,6 @@ app.all('*', function(req, res, next) {
 })
 //use errorHandler
 app.use(errorHandler)
-
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static(path.resolve('../frontend/' + 'build')));
-    app.get('*', (req,res) => {
-        res.sendFile(path.resolve('../frontend/' + 'build/index.html'));
-    })
-}
 
 app.listen(port, () => {
     console.log(`Twitter listening at http://localhost:${port}`)

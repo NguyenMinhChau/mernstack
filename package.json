@@ -2,11 +2,10 @@
   "name": "mongodb_expressjs_reactjs_nodejs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./backend/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" ",
-    "start": "node backend/server.js"
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" "
   },
   "repository": {
     "type": "git",
