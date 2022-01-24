@@ -1,6 +1,7 @@
 import {Routes, Route} from 'react-router-dom';
 import {useCallback, useEffect, useReducer} from 'react';
 import {Header, Footer, Login, Register, Main, NotFound, AppContext, reducer, initialState, getCurrentUser} from '../src/exportStore';
+import {url} from '../src/urlServer';
 import axios from 'axios';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       const token = localStorage.getItem('token');
       const option = {
         method: 'GET',
-        url: 'api/v1/users',
+        url: `${url}/api/v1/users`,
         headers: {
           'Authorization': `Bearer ${token}`
         }

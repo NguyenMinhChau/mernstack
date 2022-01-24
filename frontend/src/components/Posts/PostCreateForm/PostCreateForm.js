@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useContext, useState } from 'react';
 import { AppContext, createOnePost } from '../../../exportStore';
+import {url} from '../../../urlServer';
 import './PostCreateForm.css';
 
 const PostCreateForm = () => {
@@ -13,7 +14,7 @@ const PostCreateForm = () => {
             const token = localStorage.getItem('token');
             const option = {
                 method: 'POST',
-                url: 'api/v1/posts/create',
+                url: `${url}/api/v1/posts/create`,
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 },

@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useContext, useState } from 'react';
 import {Link} from 'react-router-dom';
 import {AppContext, deleteOnePost, updateOnePost} from '../../../exportStore';
+import {url} from '../../../urlServer';
 import '../Posts.css';
 
 const PostItem = ({post}) => {
@@ -42,7 +43,7 @@ const PostItem = ({post}) => {
             const token = localStorage.getItem('token');
             const option = {
                 method: 'PUT',
-                url: `api/v1/posts/update/${post._id}`,
+                url: `${url}/api/v1/posts/update/${post._id}`,
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 },
@@ -60,7 +61,7 @@ const PostItem = ({post}) => {
             const token = localStorage.getItem('token');
             const option = {
                 method: 'DELETE',
-                url: `api/v1/posts/delete/${post._id}`,
+                url: `${url}/api/v1/posts/delete/${post._id}`,
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 }

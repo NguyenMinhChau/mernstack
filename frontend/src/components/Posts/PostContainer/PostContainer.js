@@ -2,13 +2,14 @@ import axios from 'axios';
 import { useCallback, useContext, useEffect } from 'react';
 import {PostItem, AppContext, getAllPost} from '../../../exportStore';
 import '../Posts.css';
+import {url} from '../../../urlServer';
 const PostContainer = () => {
     const {state, dispatch} = useContext(AppContext);
     const getAllPosts = useCallback(async () => {
         try{
             const option = {
                 method: 'GET',
-                url: 'api/v1/posts',
+                url: `${url}/api/v1/posts`,
             }
             const response = await axios(option);
             dispatch(getAllPost(response.data.data));

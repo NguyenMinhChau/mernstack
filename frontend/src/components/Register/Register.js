@@ -3,6 +3,7 @@ import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 import './Register.css';
 import { AppContext, getCurrentUser } from '../../exportStore';
+import {url} from '../../urlServer';
 
 const Register = () => {
     const {dispatch} = useContext(AppContext);
@@ -17,7 +18,7 @@ const Register = () => {
             event.preventDefault();
             const option = {
                 method: 'POST',
-                url: 'api/v1/users/register',
+                url: `${url}/api/v1/users/register`,
                 data: userInput
             }
             const response = await axios(option);

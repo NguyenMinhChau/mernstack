@@ -1,7 +1,8 @@
 import {useState, useContext} from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
-import { AppContext, getCurrentUser } from '../../exportStore';
+import { AppContext, getCurrentUser} from '../../exportStore';
+import {url} from '../../urlServer';
 import './Login.css';
 
 const Login = () => {
@@ -17,7 +18,7 @@ const Login = () => {
             event.preventDefault();
             const option = {
                 method: 'POST',
-                url: 'api/v1/users/login',
+                url: `${url}/api/v1/users/login`,
                 data: userInput
             }
             const response = await axios(option);
