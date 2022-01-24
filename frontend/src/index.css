@@ -58,7 +58,7 @@ body{
     flex-wrap: wrap!important;
 }
 .mh-60vh{
-    min-height: 60vh!important;
+    min-height: calc(100vh - 258px)!important;
 }
 ul li{
     list-style: none!important;
@@ -67,7 +67,11 @@ ul li{
 @media (min-width: 64em) {}
 
 /* Ipad Pro */
-@media (max-width: 64em) {}
+@media (max-width: 64em) {
+    .w-ipadpro-50{
+        min-width: 50%!important;
+    }
+}
 
 /* Tablet & Mobile */
 @media (max-width: 63.9375em){}
@@ -79,5 +83,8 @@ ul li{
 @media (max-width: 46.25em) {
     .mt-3{
         margin-top: 15px!important;;
+    }
+    .w-mobile-80{
+        min-width: 80%!important;
     }
 }

@@ -32,9 +32,9 @@ const Login = () => {
     }
     return (
         <>
-            <div className='login d-flex flex-justify-center w-100 mt-5 mb-5'>
-                <form className='form-login text-center' autoComplete='off' onSubmit={onSubmitHandler}>
-                    <h5 className='form-login-text text-bold mt-2 mb-3'>Enter Account</h5>
+            <div className='login d-flex flex-justify-center flex-align-center w-100 mt-5 mb-5 mh-60vh'>
+                <form className='form-login text-center w-mobile-80 w-ipadpro-50' autoComplete='off' onSubmit={onSubmitHandler}>
+                    <h5 className='form-login-text text-bold mt-2 mb-4'>Enter Account</h5>
                     <div className='form-group'>
                         <div className='error-message'>{errorMessage ? `Error: ${errorMessage}` : ''}</div>
                     </div>

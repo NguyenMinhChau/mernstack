@@ -32,9 +32,9 @@ const Register = () => {
     }
     return (
         <>
-            <div className='register d-flex flex-justify-center w-100 mt-5 mb-5'>
-                <form className='form-register text-center' autoComplete='off' onSubmit={onSubmitHandler}>
-                    <h5 className='form-register-text text-bold mt-2 mb-3'>Register Account</h5>
+            <div className='register d-flex flex-justify-center flex-align-center w-100 mt-5 mb-5 mh-60vh'>
+                <form className='form-register text-center w-mobile-80 w-ipadpro-50' autoComplete='off' onSubmit={onSubmitHandler}>
+                    <h5 className='form-register-text text-bold mt-2 mb-4'>Register Account</h5>
                     <div className='form-group'>
                         {errorMessage && 
                             Array.isArray(errorMessage) ?

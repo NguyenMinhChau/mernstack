@@ -22,7 +22,7 @@ const PostContainer = () => {
     },[getAllPosts]);
     return (
         <>
-            <div className='pd-rt-15 mt-3'>
+            <div className='pd-rt-15 mt-3 mh-60vh'>
                 <ul className='post-list-container'>
                     {state.posts.map((post, index) => {
                         return (
