@@ -5,7 +5,7 @@
   "main": "./backend/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"cd backend && npm start\" \"cd frontend && npm start\" "
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" "
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "url": "https://github.com/NguyenMinhChau/mernstack/issues"
   },
   "homepage": "https://github.com/NguyenMinhChau/mernstack#readme",
-  "dependencies": {
+  "devDependencies": {
     "concurrently": "^7.0.0"
   }
 }

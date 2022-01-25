@@ -24,7 +24,7 @@ function App() {
     }catch(err){
       console.log(err);
     }
-  },[dispatch])
+  },[])
   useEffect(() => {
     checkCurrentUser();
   },[checkCurrentUser]);

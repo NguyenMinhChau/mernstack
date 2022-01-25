@@ -40,7 +40,8 @@ const PostCreateForm = () => {
                         </div>
                         <div className='form-group d-flex'>
                             <button className='btn-custom ml-auto' type='submit'>
-                                <i className="fab fa-twitter" style={{color: "#22ddd9"}}></i> Tweet</button>
+                                <i className="fab fa-twitter" style={{color: "#22ddd9"}}></i> Tweet
+                            </button>
                         </div>
                     </form>
                 </div>

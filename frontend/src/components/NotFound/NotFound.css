@@ -2,3 +2,8 @@
     min-height: 60vh!important;
     font-family: 'Times New Roman', Times, serif!important;
 }
+.page-not-found-image{
+    width: 100%!important;
+    height: 300px!important;
+    background: url('https://img.freepik.com/free-vector/error-404-page-found-banner-with-broken-cable-website-template_249405-177.jpg?size=626&ext=jpg') no-repeat center center!important;
+}
