@@ -40,6 +40,9 @@ const PostItem = ({post}) => {
     const onUpdateHandler = async (e) => {
         try{
             setOpenEditor(false);
+            const formData = new FormData();
+            formData.append('content', postInput.content);
+            formData.append('image', postInput.image);
             const token = localStorage.getItem('token');
             const option = {
                 method: 'PUT',
@@ -47,7 +50,7 @@ const PostItem = ({post}) => {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 },
-                data: postInput
+                data: formData
             }
             const response = await axios(option);
             dispatch(updateOnePost(response.data.data));
@@ -77,12 +80,20 @@ const PostItem = ({post}) => {
             <li className='post-list-item mb-3'>
                 <div className='post-list-item-top'>
                     <p className='post-list-item-text'>{post.content}</p>
+                    {post.image &&
+                        <>
+                            <div className="card w-mobile-80 w-ipadpro-50 w-100 bg-dark">
+                                <img onError={(e) => e.target.src='https://qph.fs.quoracdn.net/main-qimg-2898d743c3c2bf03a45f7c6d9181efe6'} src={`/uploads/posts/${post.image}`} className='post-item-image' alt="avatar"/>
+                            </div>
+                        </>
+                        
+                    }
                     <div className='post-list-item-info d-flex flex-wrap mt-4'>
                         <div className='post-list-info-left d-flex flex-align-center'>
                             <span className="badge badge-warning mr-3">
                                 <Link to="#" className='info-left-author'>by: {post.author.username}</Link>
                             </span>
-                            <span className='info-left-date badge badge-light'>Date: <span className='date'>{convertDate(post.createdAt)}</span></span>
+                            <span className='info-left-date badge badge-light'>CreatedAt: <span className='date'>{convertDate(post.createdAt)}</span></span>
                         </div>
                         <div className='post-list-info-right d-flex ml-auto'>
                             {state.user === post.author.username &&
@@ -111,9 +122,15 @@ const PostItem = ({post}) => {
                 </div>
                 {openEditor && !deleteConfirm &&
                     <div className='post-list-item-bottom mt-3'>
-                        <form className='form-item-bottom-updates' onSubmit={onUpdateHandler}>
+                        <form className='form-item-bottom-updates' onSubmit={onUpdateHandler} encType='multipart/form-data'>
                             <div className='form-group'>
                                 <textarea className='form-control' id='content' name='content' rows='5' value={postInput.content} onChange={(e) => setPostInput({...postInput, content: e.target.value})}/>
+                            </div>
+                            <div className='form-group'>
+                                <input type='file' className='form-control' id='image' name='image' onChange={(e) => setPostInput({...postInput, image: e.target.files[0]})} required/>
+                            </div>
+                            <div className='form-group'>
+                                <img onError={(e) => e.target.src='https://qph.fs.quoracdn.net/main-qimg-2898d743c3c2bf03a45f7c6d9181efe6'} className='post-item-image image-update' src={`/uploads/posts/${post.image}`} alt=''/>
                             </div>
                             <div className='form-group d-flex'>
                                 <button type="submit" className='btn btn-warning ml-auto mr-2'>

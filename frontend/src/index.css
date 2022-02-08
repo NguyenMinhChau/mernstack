@@ -66,6 +66,23 @@ body{
 ul li{
     list-style: none!important;
 }
+.img-responsive{
+    width: 30px!important;
+    height: 30px!important;
+    border-radius: 50%!important;
+    background-size: cover!important;
+    background-position: center center!important;
+    object-fit: cover!important;
+}
+.post-item-image{
+    width: 100%!important;
+    background-size: cover!important;
+    background-position: center center!important;
+    object-fit: cover!important;
+}
+.image-update{
+    width: 30%!important;
+}
 /* PC */
 @media (min-width: 64em) {}
 

@@ -5,6 +5,30 @@ import './Header.css';
 
 const Header = () => {
     const {state, dispatch} = useContext(AppContext);
+    //lấy image của user dựa vào post
+    const getImage = (username) => {
+        let image = '';
+        if(state.posts){
+            state.posts.forEach(post => {
+                if(post.author.username === username){
+                    image = post.author.image;
+                }
+            });
+        }
+        return image;
+    }
+    //lấy bài post theo user
+    const getPostByUser = (username) => {
+        let posts = [];
+        if(state.posts){
+            state.posts.forEach(post => {
+                if(post.author.username === username){
+                    posts.push(post);
+                }
+            });
+        }
+        return posts;
+    }
     const Signout = () => {
         localStorage.removeItem('token');
         dispatch(getCurrentUser(null));
@@ -21,7 +45,10 @@ const Header = () => {
                     <ul className="navbar-nav ml-auto">
                         {state.user && 
                             <>
-                                <li className="nav-item">
+                                <li className="nav-item d-flex flex-align-center flex-justify-center">
+                                    {getPostByUser(state.user).length > 0 &&
+                                        <img onError={(e) => e.target.src='https://qph.fs.quoracdn.net/main-qimg-2898d743c3c2bf03a45f7c6d9181efe6'} src={`/uploads/users/${getImage(state.user)}`} alt="avatar" className="img-responsive"/>
+                                    }
                                     <Link className="nav-link active-user text-bold" to="#">Hello, {state.user}</Link>
                                 </li>
                                 <li className="nav-item">
@@ -32,7 +59,7 @@ const Header = () => {
                         }
                         {!state.user && 
                             <>
-                                <li className="nav-item active">
+                                <li className="nav-item">
                                 <Link className="nav-link" to="/login">
                                     <i className="fas fa-sign-in-alt" style={{color: "#22ddd9"}}></i> Login</Link>
                                 </li>

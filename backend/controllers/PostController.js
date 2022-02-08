@@ -5,8 +5,8 @@ const PostController = {
         try{
             let posts = await Post.find({}).populate({
                 path: 'author',
-                select: 'username'
-            }).select('content author createdAt');
+                select: ['username', 'image']
+            }).select('content author createdAt image');
             res.status(200).json({
                 status: 'success',
                 message: 'List of articles',
@@ -21,6 +21,8 @@ const PostController = {
     //khi tạo cần verify token -> tạo một middleware để verify token
     createPost: async function(req, res, next){
         try{
+            const imagePost = req.file.filename;
+            req.body.image = imagePost;
             const {userId} = req.user;
             let post = await Post.create({...req.body, author: userId});
             res.status(200).json({
@@ -48,6 +50,8 @@ const PostController = {
     //[PUT] api/v1/posts/update/:id
     updatePost: async function(req, res, next){
         try{
+            const imagePost = req.file.filename;
+            req.body.image = imagePost;
             let post = await Post.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidator: true});
             res.status(200).json({
                 status: 'success',

@@ -22,6 +22,7 @@ const PostContainer = () => {
     },[getAllPosts]);
     return (
         <>
+            {state.posts.length > 0 ? 
             <div className='pd-rt-15 mt-3 mh-60vh'>
                 <ul className='post-list-container'>
                     {state.posts.map((post, index) => {
@@ -30,7 +31,9 @@ const PostContainer = () => {
                         )
                     })}
                 </ul>
-            </div>
+            </div> : 
+            <div className="no-post mt-4 mb-4">Không có bài viết nào hiển thị.</div>
+            }
         </>
     )
 }

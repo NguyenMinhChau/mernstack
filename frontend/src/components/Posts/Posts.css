@@ -25,3 +25,10 @@
     color: var(--color-white)!important;
     font-size: 17px!important;
 }
+.no-post{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-white-opacity);
+    font-style: italic;
+}

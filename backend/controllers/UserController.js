@@ -5,6 +5,8 @@ const UserController = {
     //[POST] api/v1/users/register
     register: async function(req, res, next){
         try{
+            const imageUser = req.file.filename;
+            req.body.image = imageUser;
             let user = await User.create(req.body);
             let token = jwt.sign({userId: user._id}, process.env.APP_SECRET);
             res.status(200).json({
@@ -49,7 +51,7 @@ const UserController = {
             const data = {user: null};
             if(req.user){
                 const user = await User.findOne({_id: req.user.userId});
-                data.user = {_id: user.id, username: user.username, email: user.email};
+                data.user = {_id: user.id, username: user.username, email: user.email, image: user.image};
             }
             res.status(200).json({
                 data: data
