@@ -6,7 +6,9 @@ const UserController = require('../controllers/UserController');
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb){
-        cb(null, '../frontend/public/uploads/users');
+        //../frontend/public/uploads/users
+        cb(null, './uploads/users');
+        // cb(null, '../frontend/public/uploads/users');
     }, 
     filename: function(req, file, cb){
         cb(null, file.fieldname + "_" + Date.now() + "_" + 

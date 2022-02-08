@@ -6,7 +6,9 @@ const PostController = require('../controllers/PostController');
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb){
-        cb(null, '../frontend/public/uploads/posts');
+        //../frontend/public/uploads/posts
+        cb(null, './uploads/posts');
+        // cb(null, '../frontend/public/uploads/posts');
     }, 
     filename: function(req, file, cb){
         cb(null, file.fieldname + "_" + Date.now() + "_" + 

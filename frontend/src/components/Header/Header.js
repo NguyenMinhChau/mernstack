@@ -45,9 +45,9 @@ const Header = () => {
                     <ul className="navbar-nav ml-auto">
                         {state.user && 
                             <>
-                                <li className="nav-item d-flex flex-align-center flex-justify-center">
+                                <li className="nav-item d-flex flex-align-center flex-justify-center mr-auto">
                                     {getPostByUser(state.user).length > 0 &&
-                                        <img onError={(e) => e.target.src='https://qph.fs.quoracdn.net/main-qimg-2898d743c3c2bf03a45f7c6d9181efe6'} src={`/uploads/users/${getImage(state.user)}`} alt="avatar" className="img-responsive"/>
+                                        <img onError={(e) => e.target.src='https://qph.fs.quoracdn.net/main-qimg-2898d743c3c2bf03a45f7c6d9181efe6'} src={`./uploads/users/${getImage(state.user)}`} alt="avatar" className="img-responsive mr-2"/>
                                     }
                                     <Link className="nav-link active-user text-bold" to="#">Hello, {state.user}</Link>
                                 </li>
