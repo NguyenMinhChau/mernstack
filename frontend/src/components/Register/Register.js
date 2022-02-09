@@ -7,7 +7,7 @@ import {url} from '../../urlServer';
 
 const Register = () => {
     const {dispatch} = useContext(AppContext);
-    const [userInput, setUserInput] = useState({username: '', email: '', password: '', image: ''});
+    const [userInput, setUserInput] = useState({username: '', email: '', password: ''});
     const [imageuser, setImageuser] = useState('');
     const [errorMessage, setErrorMessage] = useState(null);
     const history = useNavigate();

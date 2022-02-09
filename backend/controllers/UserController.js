@@ -2,6 +2,17 @@ const User = require('../models/UserModel');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const UserController = {
+    //get all users
+    index: async (req, res) => {
+        try {
+            const users = await User.find();
+            res.json(users);
+        } catch (error) {
+            res.json({
+                message: error.message
+            });
+        }
+    },
     //[POST] api/v1/users/register
     register: async function(req, res, next){
         try{

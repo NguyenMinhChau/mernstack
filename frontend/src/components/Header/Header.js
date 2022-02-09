@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import {Link} from 'react-router-dom';
+import {url} from '../../urlServer';
 import { AppContext, getCurrentUser } from '../../exportStore';
 import './Header.css';
 
@@ -46,8 +47,9 @@ const Header = () => {
                         {state.user && 
                             <>
                                 <li className="nav-item d-flex flex-align-center flex-justify-center mr-auto">
+                                    
                                     {getPostByUser(state.user).length > 0 &&
-                                        <img onError={(e) => e.target.src='https://qph.fs.quoracdn.net/main-qimg-2898d743c3c2bf03a45f7c6d9181efe6'} src={`./uploads/users/${getImage(state.user)}`} alt="avatar" className="img-responsive mr-2"/>
+                                        <img onError={(e) => e.target.src='https://qph.fs.quoracdn.net/main-qimg-2898d743c3c2bf03a45f7c6d9181efe6'} src={`${url}/users/${getImage(state.user)}`} alt="avatar" className="img-responsive mr-2"/>
                                     }
                                     <Link className="nav-link active-user text-bold" to="#">Hello, {state.user}</Link>
                                 </li>

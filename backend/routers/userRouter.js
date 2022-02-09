@@ -6,9 +6,7 @@ const UserController = require('../controllers/UserController');
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb){
-        //../frontend/public/uploads/users
         cb(null, './uploads/users');
-        // cb(null, '../frontend/public/uploads/users');
     }, 
     filename: function(req, file, cb){
         cb(null, file.fieldname + "_" + Date.now() + "_" + 
@@ -19,6 +17,7 @@ const upload = multer({storage: storage});
 
 router.post('/register', upload.single('image'), UserController.register);
 router.post('/login', UserController.login);
+router.get('/getall', UserController.index);
 router.get('/', checkCurrentUser, UserController.getCurentUser);
 
 module.exports = router;

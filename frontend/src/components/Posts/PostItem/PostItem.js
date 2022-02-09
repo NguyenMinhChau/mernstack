@@ -83,7 +83,7 @@ const PostItem = ({post}) => {
                     {post.image &&
                         <>
                             <div className="card w-mobile-80 w-ipadpro-50 w-100 bg-dark">
-                                <img onError={(e) => e.target.src='https://qph.fs.quoracdn.net/main-qimg-2898d743c3c2bf03a45f7c6d9181efe6'} src={`/uploads/posts/${post.image}`} className='post-item-image' alt="avatar"/>
+                                <img onError={(e) => e.target.src='https://qph.fs.quoracdn.net/main-qimg-2898d743c3c2bf03a45f7c6d9181efe6'} src={`${url}/posts/${post.image}`} className='post-item-image' alt="avatar"/>
                             </div>
                         </>
                         
@@ -130,7 +130,7 @@ const PostItem = ({post}) => {
                                 <input type='file' className='form-control' id='image' name='image' onChange={(e) => setPostInput({...postInput, image: e.target.files[0]})} required/>
                             </div>
                             <div className='form-group'>
-                                <img onError={(e) => e.target.src='https://qph.fs.quoracdn.net/main-qimg-2898d743c3c2bf03a45f7c6d9181efe6'} className='post-item-image image-update' src={`/uploads/posts/${post.image}`} alt=''/>
+                                <img onError={(e) => e.target.src='https://qph.fs.quoracdn.net/main-qimg-2898d743c3c2bf03a45f7c6d9181efe6'} className='post-item-image image-update' src={`${url}/posts/${post.image}`} alt=''/>
                             </div>
                             <div className='form-group d-flex'>
                                 <button type="submit" className='btn btn-warning ml-auto mr-2'>
