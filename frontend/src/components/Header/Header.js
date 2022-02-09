@@ -37,8 +37,8 @@ const Header = () => {
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <Link className="navbar-brand text-bold" to="/">
-                    <i className="fab fa-twitter" style={{color: "#22ddd9"}}></i> Twitter</Link>
+                <Link className="navbar-brand text-bold d-flex flex-align-center flex-justify-center" to="/">
+                <span className="mr-2"><i className='bx bxl-react bx-spin' style={{color:"#2777d4", fontSize:"25px"}}></i></span> <span>MERN STACK</span></Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
@@ -55,7 +55,7 @@ const Header = () => {
                                 </li>
                                 <li className="nav-item">
                                 <span className="nav-link cr-pt" onClick={Signout}>
-                                    <i className="fas fa-sign-out-alt" style={{color: "#22ddd9"}}></i> Signout</span>
+                                    <i className="fas fa-sign-out-alt" style={{color: "#2777d4"}}></i> Signout</span>
                                 </li>
                             </>
                         }
@@ -63,11 +63,11 @@ const Header = () => {
                             <>
                                 <li className="nav-item">
                                 <Link className="nav-link" to="/login">
-                                    <i className="fas fa-sign-in-alt" style={{color: "#22ddd9"}}></i> Login</Link>
+                                    <i className="fas fa-sign-in-alt" style={{color: "#2777d4"}}></i> Login</Link>
                                 </li>
                                 <li className="nav-item">
                                 <Link className="nav-link" to="/register">
-                                    <i className="far fa-registered" style={{color: "#22ddd9"}}></i> Register</Link>
+                                    <i className="far fa-registered" style={{color: "#2777d4"}}></i> Register</Link>
                                 </li>
                             </>
                         }

@@ -49,8 +49,8 @@ const PostCreateForm = () => {
                             <input type='file' className='form-control mt-4' id='image' name='image' onChange={handleImageChange}/>
                         </div>
                         <div className='form-group d-flex'>
-                            <button className='btn-custom ml-auto' type='submit'>
-                                <i className="fab fa-twitter" style={{color: "#22ddd9"}}></i> Tweet
+                            <button className='btn-custom ml-auto d-flex d-flex flex-align-center flex-justify-center' type='submit'>
+                            <span className='mr-2'><i className='bx bxl-react bx-spin' style={{color:"#ffff", fontSize:"25px"}}></i></span> <span>POST</span>
                             </button>
                         </div>
                     </form>
