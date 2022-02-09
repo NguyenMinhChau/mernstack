@@ -32,7 +32,7 @@ const PostContainer = () => {
                     })}
                 </ul>
             </div> : 
-            <div className="no-post mt-4 mb-4">Không có bài viết nào hiển thị.</div>
+            <div className="no-post mt-4 mb-4">Đang tải dữ liệu. Vui lòng đợi!! <span class="loader ml-3"></span></div>
             }
         </>
     )
