@@ -7,7 +7,7 @@ const Footer = () => {
             <div className='footer'>
                 <div className="card text-center bg-dark text-white">
                     <div className="card-header">
-                    Twitter App
+                    MERN STACK
                     </div>
                     <div className="card-body">
                     <h5 className="card-title text-bold">Thông tin liên hệ</h5>
@@ -41,7 +41,7 @@ const Footer = () => {
                     </ul>
                     </div>
                     <div className="card-footer text-muted">
-                        2022 - <span className='year'></span> &copy; Copyright all rights reserved.
+                        2021 - <span className='year'></span> &copy; Copyright all rights reserved.
                     </div>
                 </div>
             </div>
