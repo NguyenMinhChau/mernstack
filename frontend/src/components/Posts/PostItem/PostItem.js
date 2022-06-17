@@ -75,6 +75,14 @@ const PostItem = ({post}) => {
             console.log(err);
         }
     }
+    const showModal = () => {
+        document.querySelector('.modal').classList.add('open')
+        let imageModal = document.querySelector('.modal-image');
+        imageModal.src = `${url}/posts/${post.image}`;
+    }
+    const hideModal = () => {
+        document.querySelector('.modal').classList.remove('open')
+    }
     return (
         <>
             <li className='post-list-item mb-3'>
@@ -83,7 +91,7 @@ const PostItem = ({post}) => {
                     {post.image &&
                         <>
                             <div className="card w-mobile-80 w-ipadpro-50 w-100 bg-dark">
-                                <img onError={(e) => e.target.src='https://qph.fs.quoracdn.net/main-qimg-2898d743c3c2bf03a45f7c6d9181efe6'} src={`${url}/posts/${post.image}`} className='post-item-image' alt="avatar"/>
+                                <img onError={(e) => e.target.src='https://qph.fs.quoracdn.net/main-qimg-2898d743c3c2bf03a45f7c6d9181efe6'} src={`${url}/posts/${post.image}`} className='post-item-image cr-pointer' alt="avatar" onClick={showModal}/>
                             </div>
                         </>
                         
@@ -142,6 +150,13 @@ const PostItem = ({post}) => {
                     </div>
                 }
             </li>
+            {/* MODAL */}
+            <div className="modal">
+                <div className="modal-close" onClick={hideModal}>&times;</div>
+                <div className="modal-body">
+                    <img onError={(e) => e.target.src='https://qph.fs.quoracdn.net/main-qimg-2898d743c3c2bf03a45f7c6d9181efe6'} src="" alt="imageModal" className="modal-image" />
+                </div>
+            </div>
         </>
     )
 }

@@ -28,14 +28,14 @@ router(app);
 //use errorHandler
 app.use(errorHandler)
 
-app.use(express.static('uploads/'));
+app.use(express.static('./uploads/'));
 
-// if(process.env.NODE_ENV === 'production'){
-//     app.use(express.static(__dirname + '/build/'));
-//     app.get('*', (req,res) => {
-//         res.sendFile(__dirname + '/build/index.html');
-//     })
-// }
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static(__dirname + '/uploads/'));
+    // app.get('*', (req,res) => {
+    //     res.sendFile(__dirname + '/build/index.html');
+    // })
+}
 
 var port_number = app.listen(process.env.PORT || 5000);
 app.listen(port_number, () => {
